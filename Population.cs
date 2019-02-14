@@ -7,7 +7,8 @@ namespace PadawansTask1
         public static int GetYears(int initialPopulation, double percent, int visitors, int currentPopulation)
         {
             if (initialPopulation <= 0 || percent <= 0 || visitors <= 0 || currentPopulation <= 0)
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentException();
+            if (initialPopulation > int.MaxValue || visitors > int.MaxValue || currentPopulation > int.MaxValue) throw new ArgumentException();
 
             double n1 = initialPopulation;
             int years = 0;
